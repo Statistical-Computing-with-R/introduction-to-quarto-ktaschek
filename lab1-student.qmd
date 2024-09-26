@@ -64,6 +64,11 @@ section (e.g., Tooth Growth Dataset).
 ```{r}
 #| echo: true
 #| label: creating-a-plot
+#| fig-align: center
+#| layout-ncol: 2
+#| fig-cap: 
+#|   - "OJ vs VC Effect on Tooth Growth"
+#|   - "Dosage Effect on Tooth Growth"
 
 library(tidyverse)
 
