@@ -66,9 +66,12 @@ section (e.g., Tooth Growth Dataset).
 #| label: creating-a-plot
 #| fig-align: center
 #| layout-ncol: 2
-#| fig-cap: 
+#| fig-subcap: 
 #|   - "OJ vs VC Effect on Tooth Growth"
 #|   - "Dosage Effect on Tooth Growth"
+#| fig-cap: "1: Vitamin C Effect on Tooth Growth of Guinea Pigs"
+#| warning: false
+#| message: false
 
 library(tidyverse)
 
@@ -98,3 +101,17 @@ should be **center aligned**.
 **Question 9** -- Specify a **figure caption** for the boxplots (using a
 code-chunk option).
 
+# T Test Results for Tooth Growth Comparison Using Orange Juice and Ascrobic 
+```{r}
+#| echo: true
+
+data("ToothGrowth")
+
+t_test_result <- t.test(len~supp, data = ToothGrowth, alternative = "two.sided", var.equal = FALSE)
+
+t_test_result
+
+```
+
+1. The p-value is 0.06063 which is greater than the significance value of 0.05, therefore we fail to reject the null hypothesis. There is not enough evidence to see a significant difference in tooth growth from orange juice versus tooth growth from ascorbic acid.
+2. We are 95% confident that the true difference in means for tooth length growth og orange juice and ascorbic acid is betwe  -0.1710156 anf 7.5710156.
